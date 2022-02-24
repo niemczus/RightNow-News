@@ -6,17 +6,43 @@
 //
 
 import UIKit
+import Alamofire
+import Kingfisher
+
+//https://newsapi.org/v2/top-headlines
+//8210d388fb7f4522a623b23854721bf4
 
 //private let reuseIdentifier = "Cell"
 
 class NewsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var articles = [Article(headline: "This is news"), Article(headline: "This is news also news"), Article(headline: "This is news but not really")]
+    var articles = [Article]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getArticles()
     }
+    
+    func getArticles() {
+        let parameters: Parameters = ["country": "us",
+                                      "apiKey": "8210d388fb7f4522a623b23854721bf4"]
+        AF.request("https://newsapi.org/v2/top-headlines", parameters: parameters).responseData { (response) in
+            guard let data = response.data else { return }
+        
+            do {
+//                let json = try JSONSerialization.jsonObject(with: data, options: [])
+//                print(json)
+                 let topHeadlineResponse = try JSONDecoder().decode(TopHeadlineResponse.self, from: data)
+                self.articles = topHeadlineResponse.articles
+                self.collectionView.reloadData()
+                
+            } catch {
+                print(error)
+            }
+        
+        }
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return articles.count
