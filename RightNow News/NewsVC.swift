@@ -57,15 +57,15 @@ class NewsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let height: CGFloat = 240
-        let width = (collectionView.frame.width / 2) - 2
-        let size = CGSize(width: width, height: height)
-        return size
-        
-    }
-    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let height: CGFloat = 240
+//        let width = (collectionView.frame.width / 2) - 2
+//        let size = CGSize(width: width, height: height)
+//        return size
+//
+//    }
+//
     
     
 }
