@@ -3,12 +3,13 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--  _News_______-->
+        <!--RightNow News-->
         <scene sceneID="EQD-EQ-Ktw">
             <objects>
                 <collectionViewController id="vBk-Yo-w1y" customClass="NewsVC" customModule="RightNow_News" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,11 +66,49 @@
                             <outlet property="delegate" destination="vBk-Yo-w1y" id="HZY-h2-Wpb"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="  _News_______" id="D52-n9-PGh"/>
+                    <navigationItem key="navigationItem" title="RightNow News" id="D52-n9-PGh"/>
+                    <connections>
+                        <segue destination="mX8-4t-7Jz" kind="show" identifier="seque.Main.newsToArticle" id="MmM-Lx-ggW"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Yv-ek-VC1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="829.60000000000002" y="50.246305418719217"/>
+        </scene>
+        <!--Article-->
+        <scene sceneID="PWW-ic-xAc">
+            <objects>
+                <viewController id="mX8-4t-7Jz" customClass="ArticleVC" customModule="RightNow_News" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hGD-H0-vEN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1k-Hy-q10">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u1E-Tb-lYs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y1k-Hy-q10" firstAttribute="top" secondItem="u1E-Tb-lYs" secondAttribute="top" id="Sqd-r5-8pZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Y1k-Hy-q10" secondAttribute="bottom" id="ULi-pY-GCr"/>
+                            <constraint firstItem="Y1k-Hy-q10" firstAttribute="leading" secondItem="u1E-Tb-lYs" secondAttribute="leading" id="tmi-kB-hX6"/>
+                            <constraint firstItem="Y1k-Hy-q10" firstAttribute="trailing" secondItem="u1E-Tb-lYs" secondAttribute="trailing" id="x0E-q7-lqE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Article" id="wfO-lU-nM7"/>
+                    <connections>
+                        <outlet property="articleWebView" destination="Y1k-Hy-q10" id="SBs-bn-GuI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABQ-DQ-Eqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709.5999999999999" y="49.50738916256158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hyH-lH-ka9">
@@ -77,29 +116,30 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WOL-ox-kCY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="0N0-Rh-7x9">
-                        <rect key="frame" x="0.0" y="44" width="375" height="106"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="99.333333333333343"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.2116018282312925" green="0.57733659842653062" blue="0.6294106419170068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="shadowColor" red="0.21160182820000001" green="0.57733659839999996" blue="0.62941064189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.21160182820000001" green="0.57733659839999996" blue="0.62941064189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <textAttributes key="largeTitleTextAttributes">
-                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="49"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="42"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </textAttributes>
                         </navigationBarAppearance>
                     </navigationBar>
@@ -113,6 +153,7 @@
             <point key="canvasLocation" x="-79.710144927536234" y="50.892857142857139"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

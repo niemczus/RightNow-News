@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32395A6027C6C730002D037E /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32395A5F27C6C730002D037E /* ArticleCell.swift */; };
 		32395A6227C7E528002D037E /* TopHeadlinesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32395A6127C7E528002D037E /* TopHeadlinesResponse.swift */; };
+		32395A6427C8005F002D037E /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32395A6327C8005F002D037E /* ArticleVC.swift */; };
 		32813CAC27C6B6C8003B06A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32813CAB27C6B6C8003B06A6 /* AppDelegate.swift */; };
 		32813CAE27C6B6C8003B06A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32813CAD27C6B6C8003B06A6 /* SceneDelegate.swift */; };
 		32813CB327C6B6C8003B06A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32813CB127C6B6C8003B06A6 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		2196C53F31228DA9A1DA9DCD /* Pods-RightNow News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RightNow News.debug.xcconfig"; path = "Target Support Files/Pods-RightNow News/Pods-RightNow News.debug.xcconfig"; sourceTree = "<group>"; };
 		32395A5F27C6C730002D037E /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		32395A6127C7E528002D037E /* TopHeadlinesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlinesResponse.swift; sourceTree = "<group>"; };
+		32395A6327C8005F002D037E /* ArticleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleVC.swift; sourceTree = "<group>"; };
 		32813CA827C6B6C8003B06A6 /* RightNow News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RightNow News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32813CAB27C6B6C8003B06A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32813CAD27C6B6C8003B06A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				32813CAD27C6B6C8003B06A6 /* SceneDelegate.swift */,
 				32813CB127C6B6C8003B06A6 /* Main.storyboard */,
 				32813CC227C6BB27003B06A6 /* NewsVC.swift */,
+				32395A6327C8005F002D037E /* ArticleVC.swift */,
 				32813CC427C6BF9F003B06A6 /* Article.swift */,
 				32395A5F27C6C730002D037E /* ArticleCell.swift */,
 				32395A6127C7E528002D037E /* TopHeadlinesResponse.swift */,
@@ -225,6 +228,7 @@
 				32813CAE27C6B6C8003B06A6 /* SceneDelegate.swift in Sources */,
 				32813CC527C6BF9F003B06A6 /* Article.swift in Sources */,
 				32395A6227C7E528002D037E /* TopHeadlinesResponse.swift in Sources */,
+				32395A6427C8005F002D037E /* ArticleVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
